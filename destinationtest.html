@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Globetrotter | Recommendation</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .form-container {
+        width: 50%;
+      }
+
+      .iframe-container {
+        width: 50%;
+      }
+
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        font-size: 14px;
+        color: #333;
+      }
+
+      .form-group textarea {
+        resize: none;
+        height: 80px;
+      }
+
+      .btn-submit {
+        background-color: #28a745;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn-submit:hover {
+        background-color: #218838;
+      }
+
+      .result {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 18px;
+        color: #555;
+      }
+
+      iframe {
+        width: 100%;
+        height: 500px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <title>Globetrotter|Australia</title>
+</head>
+<body>
+  <script>
+    window.embeddedChatbotConfig = {
+    chatbotId: "xw5yHUQ-b8zAkCN3u9oTo",
+    domain: "www.chatbase.co"
+    }
+    </script>
+    <script
+    src="https://www.chatbase.co/embed.min.js"
+    chatbotId="xw5yHUQ-b8zAkCN3u9oTo"
+    domain="www.chatbase.co"
+    defer>
+    </script>
+  <nav>
+    <div class="nav__header">
+      <div class="nav__logo">
+        <a href="#" class="logo">Globetrotter</a>
+      </div>
+      <div class="nav__menu__btn" id="menu-btn">
+        <i class="ri-menu-line"></i>
+      </div>
+    </div>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="index.html">ABOUT</a></li>
+      <li><a href="index.html">DESTINATION</a></li>
+      <li><a href="destinationtest.html">RECOMMENDED 4 YOU</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+      <li><a href="#">EXPLORE NOW</a></li>
+    </ul>
+    <div class="nav__btns">
+      <button class="btn">EXPLORE NOW</button>
+    </div>
+  </nav>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <h2>Travel Recommendation Questionnaire</h2>
+        <form id="travelForm">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+              <option value="" disabled selected>Select your gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="personality">Personality:</label>
+            <textarea
+              id="personality"
+              name="personality"
+              placeholder="Describe your personality"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="travelWith">Travelling With:</label>
+            <input
+              type="text"
+              id="travelWith"
+              name="travelWith"
+              placeholder="E.g., Alone, Friends, Family"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="food">Favorite Food:</label>
+            <input
+              type="text"
+              id="food"
+              name="food"
+              placeholder="Enter your favorite food"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="transportation">Preferred Transportation:</label>
+            <select id="transportation" name="transportation" required>
+              <option value="" disabled selected>Select your transportation</option>
+              <option value="car">Car</option>
+              <option value="train">Train</option>
+              <option value="bus">Bus</option>
+              <option value="boat">Boat</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="budget">Budget (USD):</label>
+            <input
+              type="number"
+              id="budget"
+              name="budget"
+              placeholder="Enter your budget"
+              min="0"
+            />
+          </div>
+
+          <button type="submit" class="btn-submit">Submit</button>
+          <p>Note: None of your data will be stored.</p>
+        </form>
+
+        <div id="result" class="result"></div>
+      </div>
+
+      <div class="iframe-container">
+        <iframe
+          id="recommended-website"
+          src=""
+          title="Recommended Destination"
+        ></iframe>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('travelForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Gathering form data
+        let formData = new FormData(this);
+        let budget = parseInt(formData.get('budget'));
+        let transportation = formData.get('transportation');
+        let travelWith = formData.get('travelWith').toLowerCase();
+        let personality = formData.get('personality').toLowerCase();
+        let food = formData.get('food').toLowerCase();
+
+        // Logic to recommend a destination and its corresponding website
+        let destination = 'Maldives'; // Default destination
+        let website = ''; // Default website
+
+        if (budget < 500) {
+          destination = 'Malaysia';
+          website = 'malaysia.html'; // Replace with actual local path or URL
+        } else if (transportation === 'car' && travelWith.includes('family')) {
+          destination = 'Australia';
+          website = 'australia.html';
+        } else if (personality.includes('adventure')) {
+          destination = 'Indonesia';
+          website = 'Indonesia.html';
+        } else if (food.includes('seafood')) {
+          destination = 'Singapore';
+          website = 'singapore.html';
+        } else if (personality.includes('relaxing') || personality.includes('romantic')) {
+          destination = 'Maldives';
+          website = 'maldives.html';
+        } else if (budget > 2000) {
+          destination = 'New York';
+          website = 'newyork.html';
+        } else if (personality.includes('culture') || transportation === 'train') {
+          destination = 'Paris';
+          website = 'paris.html';
+        } else if (budget < 1000 && transportation === 'bus') {
+          destination = 'Laos';
+          website = 'laos.html';
+        }
+
+        // Display the recommended destination
+        document.getElementById('result').textContent = `We recommend you visit: ${destination}`;
+
+        // Update the iframe with the recommended website
+        document.getElementById('recommended-website').src = website;
+      });
+    </script>
+        <footer id="contact">
+          <div class="section__container footer__container">
+            <div class="footer__col">
+              <div class="footer__logo">
+                <a href="#" class="logo">Globetrotter</a>
+              </div>
+              <p>
+                Explore the world with ease and excitement through our comprehensive
+                travel platform. Your journey begins here, where seamless planning
+                meets unforgettable experiences.
+              </p>
+              <ul class="footer__socials">
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-instagram-line"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-youtube-line"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__col">
+              <h4>Quick Links</h4>
+              <ul class="footer__links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinationlist.html">Destination</a></li>
+                <li><a href="destinationtest.html">Questionaire</a></li>
+                <li><a href="index.html">Learn More</a></li>
+              </ul>
+            </div>
+            <div class="footer__col">
+              <h4>Contact Us</h4>
+              <ul class="footer__links">
+                <li>
+                  <a href="#">
+                    <span><i class="ri-phone-fill"></i></span> +60 123456789
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span><i class="ri-record-mail-line"></i></span> info@globetrotter
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span><i class="ri-map-pin-2-fill"></i></span> Selangor, Malaysia
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__col">
+              <h4>Subscribe</h4>
+              <form action="/">
+                <input type="text" placeholder="Enter your email" />
+                <button class="btn">Subscribe</button>
+              </form>
+            </div>
+          </div>
+          <div class="footer__bar">
+            Copyright © You Han. All rights reserved.
+          </div>
+        </footer>
+    
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="main.js"></script>
+  </body>
+</html>
